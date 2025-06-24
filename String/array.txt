@@ -1,0 +1,8 @@
+public class array{
+public static void main(String[] args){
+String[]  arr=new String[5];
+arr[1]= null;
+arr[4]=null;
+
+System.out.println(arr[0].length());
+System.out.println(arr[1].length());
