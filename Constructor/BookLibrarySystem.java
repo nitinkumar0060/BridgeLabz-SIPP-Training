@@ -1,26 +1,18 @@
 class Book {
-    public String ISBN;           // Public: accessible from anywhere
-    protected String title;       // Protected: accessible in subclass and same package
-    private String author;        // Private: only within Book class
-
-    // Constructor
+    public String ISBN;
+    protected String title; 
+    private String author;     
     public Book(String ISBN, String title, String author) {
         this.ISBN = ISBN;
         this.title = title;
         this.author = author;
     }
-
-    // Setter for author
     public void setAuthor(String author) {
         this.author = author;
     }
-
-    // Getter for author
     public String getAuthor() {
         return author;
     }
-
-    // Method to display book info
     public void displayBookInfo() {
         System.out.println("ISBN: " + ISBN);
         System.out.println("Title: " + title);
@@ -30,8 +22,6 @@ class Book {
 
 class EBook extends Book {
     private double fileSize;
-
-    // Constructor
     public EBook(String ISBN, String title, String author, double fileSize) {
         super(ISBN, title, author);
         this.fileSize = fileSize;
@@ -42,7 +32,7 @@ class EBook extends Book {
         System.out.println("ISBN (Public): " + ISBN);   // Accessing public member
         System.out.println("Title (Protected): " + title); // Accessing protected member
         System.out.println("File Size: " + fileSize + " MB");
-        System.out.println("Author (via Getter): " + getAuthor()); // Accessing private member via public getter
+        System.out.println("Author (via Getter): " + getAuthor());
     }
 }
 
