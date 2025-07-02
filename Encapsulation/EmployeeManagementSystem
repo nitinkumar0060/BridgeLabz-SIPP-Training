@@ -1,0 +1,96 @@
+import java.util.*;
+interface Department {
+    void assignDepartment(String dept);
+    String getDepartmentDetails();
+}
+abstract class Employee implements Department {
+    private int employeeId;
+    private String name;
+    private double baseSalary;
+    private String department;
+
+
+    public Employee(int employeeId, String name, double baseSalary) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.baseSalary = baseSalary;
+    }
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        if (baseSalary >= 0) {
+            this.baseSalary = baseSalary;
+        }
+    }
+    public abstract double calculateSalary();
+    public void displayDetails() {
+        System.out.println("ID: " + employeeId);
+        System.out.println("Name: " + name);
+        System.out.println("Base Salary: ₹" + baseSalary);
+        System.out.println("Department: " + department);
+        System.out.println("Total Salary: ₹" + calculateSalary());
+    }
+    public void assignDepartment(String dept) {
+        this.department = dept;
+    }
+
+    public String getDepartmentDetails() {
+        return department;
+    }
+}
+class FullTimeEmployee extends Employee {
+    private double fixedAllowance;
+
+    public FullTimeEmployee(int employeeId, String name, double baseSalary, double fixedAllowance) {
+        super(employeeId, name, baseSalary);
+        this.fixedAllowance = fixedAllowance;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return getBaseSalary() + fixedAllowance;
+    }
+}
+class PartTimeEmployee extends Employee {
+    private int workHours;
+    private double hourlyRate;
+
+    public PartTimeEmployee(int employeeId, String name, double baseSalary, int workHours, double hourlyRate) {
+        super(employeeId, name, baseSalary);
+        this.workHours = workHours;
+        this.hourlyRate = hourlyRate;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return getBaseSalary() + (workHours * hourlyRate);
+    }
+}
+public class EmployeeManagementSystem {
+    public static void main(String[] args) {
+        List<Employee> employees = new ArrayList<>();
+
+        FullTimeEmployee fte = new FullTimeEmployee(101, "Nitin", 30000, 10000);
+        fte.assignDepartment("Development");
+
+        PartTimeEmployee pte = new PartTimeEmployee(102, "Aman", 10000, 20, 500);
+        pte.assignDepartment("Support");
+
+        employees.add(fte);
+        employees.add(pte);
+        for (Employee emp : employees) {
+            System.out.println("---------------");
+            emp.displayDetails();
+        }
+    }
+}
