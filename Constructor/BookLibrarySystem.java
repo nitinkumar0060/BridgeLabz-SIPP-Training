@@ -29,8 +29,8 @@ class EBook extends Book {
 
     public void displayEBookInfo() {
         System.out.println("EBook Info:");
-        System.out.println("ISBN (Public): " + ISBN);   // Accessing public member
-        System.out.println("Title (Protected): " + title); // Accessing protected member
+        System.out.println("ISBN (Public): " + ISBN);
+        System.out.println("Title (Protected): " + title);
         System.out.println("File Size: " + fileSize + " MB");
         System.out.println("Author (via Getter): " + getAuthor());
     }
