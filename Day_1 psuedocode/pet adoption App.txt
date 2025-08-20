@@ -1,0 +1,43 @@
+CLASS Pet
+    ATTRIBUTES: name, age
+    CONSTRUCTOR(name, age)
+        set name and age
+    METHOD display()
+        print name and age
+
+CLASS Dog EXTENDS Pet
+    ATTRIBUTE: breed
+    CONSTRUCTOR(name, age, breed)
+        call Pet constructor
+        set breed
+    METHOD display()
+        call Pet display()
+        print breed
+
+CLASS Cat EXTENDS Pet
+    ATTRIBUTE: color
+    CONSTRUCTOR(name, age, color)
+        call Pet constructor
+        set color
+    METHOD display()
+        call Pet display()
+        print color
+
+CLASS Bird EXTENDS Pet
+    ATTRIBUTE: canFly (true/false)
+    CONSTRUCTOR(name, age, canFly)
+        call Pet constructor
+        set canFly
+    METHOD display()
+        call Pet display()
+        print canFly status
+
+MAIN PROGRAM
+    Create a Dog (name = "Bruno", age = 3, breed = "Labrador")
+    Create a Cat (name = "Kitty", age = 2, color = "White")
+    Create a Bird (name = "Mithu", age = 1, canFly = true)
+
+    PRINT "Pet Adoption Details"
+    Call display() on Dog
+    Call display() on Cat
+    Call display() on Bird

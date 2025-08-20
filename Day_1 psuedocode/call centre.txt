@@ -1,0 +1,36 @@
+CLASS Customer
+    ATTRIBUTES: name, type (normal/emergency)
+
+CLASS CallCenter
+    ATTRIBUTES:
+        normalQueue
+        emergencyQueue
+
+    METHOD addCustomer(name, type)
+        IF type == emergency
+            add to emergencyQueue
+        ELSE
+            add to normalQueue
+
+    METHOD serveCustomer()
+        IF emergencyQueue not empty
+            dequeue from emergencyQueue
+        ELSE IF normalQueue not empty
+            dequeue from normalQueue
+        ELSE
+            PRINT "No customers waiting"
+
+    METHOD showQueues()
+        PRINT all waiting customers
+        
+
+MAIN PROGRAM
+    Create CallCenter
+
+    Add Customer("Alice", normal)
+    Add Customer("Bob", emergency)
+    Add Customer("Charlie", normal)
+    Add Customer("David", emergency)
+
+    Show queues
+    Serve customers one by one

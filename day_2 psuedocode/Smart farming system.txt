@@ -1,0 +1,33 @@
+abstract class Crop {
+    method waterRequirement()
+    method harvest()
+}
+
+class Rice extends Crop {
+    method waterRequirement() {
+        print "Rice requires high water supply"
+    }
+    method harvest() {
+        print "Rice is harvested after 4 months"
+    }
+}
+
+class Wheat extends Crop {
+    method waterRequirement() {
+        print "Wheat requires moderate water supply"
+    }
+    method harvest() {
+        print "Wheat is harvested after 6 months"
+    }
+}
+
+main {
+    create crop1 = new Rice()
+    create crop2 = new Wheat()
+
+    crop1.waterRequirement()
+    crop1.harvest()
+
+    crop2.waterRequirement()
+    crop2.harvest()
+}

@@ -1,0 +1,31 @@
+enum TrafficLight {
+    RED (5 seconds)
+    GREEN (4 seconds)
+    YELLOW (2 seconds)
+}
+
+class TrafficSignal {
+    currentLight = RED
+
+    method changeLight() {
+        if currentLight == RED
+            currentLight = GREEN
+        else if currentLight == GREEN
+            currentLight = YELLOW
+        else if currentLight == YELLOW
+            currentLight = RED
+    }
+
+    method run() {
+        loop forever {
+            print(currentLight)
+            wait(currentLight.duration)
+            changeLight()
+        }
+    }
+}
+
+main {
+    create TrafficSignal signal
+    signal.run()
+}

@@ -1,0 +1,17 @@
+CLASS Member
+    ATTRIBUTES: name, id, membershipDate, validityPeriod (in months)
+
+    CONSTRUCTOR(name, id, membershipDate, validityPeriod)
+        set attributes
+
+    METHOD checkMembershipValidity()
+        currentDate = today's date
+        expiryDate = membershipDate + validityPeriod
+        IF currentDate <= expiryDate
+            PRINT "Membership is valid until expiryDate"
+        ELSE
+            PRINT "Membership expired on expiryDate"
+
+MAIN PROGRAM
+    Create a member: ("Krishna", "M101", "2024-08-20", 12 months)
+    Call checkMembershipValidity()

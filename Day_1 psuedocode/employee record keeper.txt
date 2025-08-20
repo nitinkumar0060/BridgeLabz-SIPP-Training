@@ -1,0 +1,11 @@
+CLASS Employee
+    ATTRIBUTES: id, name, department, salary
+
+MAIN PROGRAM
+    Create ArrayList<Employee> employees
+
+    Add employees to the list
+
+    Use stream filter() to get employees where department == "IT"
+
+    Print the filtered employees

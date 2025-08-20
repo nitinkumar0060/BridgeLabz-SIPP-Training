@@ -1,0 +1,10 @@
+CREATE HashMap<String, Integer> studentScores
+
+ADD some students with marks
+
+FIND highest scorer:
+    use stream on entrySet
+    compare by value (marks)
+    get max
+
+DISPLAY student name and score
